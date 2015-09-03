@@ -412,6 +412,9 @@ cmd_edit() {
 	set_gpg_recipients "$(dirname "$path")"
 	local passfile="$PREFIX/$path.gpg"
 
+	# only edit writable files
+	[[ -w $passfile ]] || die "Error: $passfile not writable"
+
 	tmpdir #Defines $SECURE_TMPDIR
 	local tmp_file="$(mktemp -u "$SECURE_TMPDIR/XXXXXX")-${path//\//-}.txt"
 
