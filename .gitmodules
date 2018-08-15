@@ -1,0 +1,3 @@
+[submodule "pass-extension-tail"]
+	path = pass-extension-tail
+	url = https://github.com/palortoff/pass-extension-tail.git
